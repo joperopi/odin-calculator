@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="calculator">
-        <div id="display">
-            <p class="displayLast">placeholder</p>
-            <p class="displayMain">placeholder</p>
+        <div class="display">
+            <p id="displayLast">placeholder</p>
+            <p id="displayMain">placeholder</p>
         </div>
         <div class="buttons">
             <div class="left">
@@ -40,10 +40,10 @@
                     <button class="btn">÷</button>
                     <button class="btn">×</button>
                     <button class="btn">-</button>
-                    <button class="btn">+</button>
+                    <button class="btn"onclick="displayLastTest()">+</button>
                 </div>
                 <div id="result">
-                    <button class="btn">=</button>
+                    <button class="btn" onclick="displayTest()">=</button>
                 </div>
             </div>
         </div>
