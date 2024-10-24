@@ -17,3 +17,9 @@ body {
     height: 600px;
     border-radius: 5px;
 }
+
+#display {
+    background-color: black;
+    width: 350px;
+    height: 150px;
+}
