@@ -29,6 +29,10 @@ body {
     height: 150px;
 }
 
+#display p {
+    color: white;
+}
+
 .buttons {
     background: lightgray;
     width: 350px;
