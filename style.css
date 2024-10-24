@@ -23,7 +23,7 @@ body {
     gap: 10px;
 }
 
-#display {
+.display {
     background-color: black;
     width: 350px;
     height: 100px;
@@ -34,15 +34,15 @@ body {
     padding: 10px;
 }
 
-#display p {
+.display p {
     color: white;
 }
 
-.displayLast {
+#displayLast {
     font-size: 20px;
 }
 
-.displayMain {
+#displayMain {
     font-size: 60px;
 }
 
