@@ -28,3 +28,10 @@ body {
     width: 350px;
     height: 150px;
 }
+
+.buttons {
+    background: lightgray;
+    width: 350px;
+    height: 400px;
+    display: flex;
+}
