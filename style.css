@@ -10,3 +10,9 @@ body {
     justify-content: center;
     align-items: center;
 }
+
+.calculator {
+    background-color: rgb(165, 165, 165);
+    width: 400px;
+    height: 600px;
+}
