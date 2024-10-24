@@ -26,11 +26,24 @@ body {
 #display {
     background-color: black;
     width: 350px;
-    height: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: end;
+    padding: 10px;
 }
 
 #display p {
     color: white;
+}
+
+.displayLast {
+    font-size: 20px;
+}
+
+.displayMain {
+    font-size: 60px;
 }
 
 .buttons {
