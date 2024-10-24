@@ -35,3 +35,8 @@ body {
     height: 400px;
     display: flex;
 }
+
+.btn {
+    width: 70px;
+    height: 70px;
+}
