@@ -15,4 +15,5 @@ body {
     background-color: rgb(165, 165, 165);
     width: 400px;
     height: 600px;
+    border-radius: 5px;
 }
