@@ -14,7 +14,7 @@ body {
 .calculator {
     background-color: rgb(165, 165, 165);
     width: 400px;
-    height: 600px;
+    height: 550px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -46,14 +46,42 @@ body {
     font-size: 60px;
 }
 
+#toprow,
+#numpad,
+#operations,
+.right,
+.left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.left {
+    padding: 5px;
+    align-items: end;
+    
+}
+
+.right {
+    justify-content: end;
+    flex-direction: column;
+    padding: 5px;
+}
+
 .buttons {
-    background: lightgray;
-    width: 350px;
-    height: 400px;
+    background-color: lightgray;
+    width: 310px;
+    height: 380px;
     display: flex;
 }
 
 .btn {
     width: 70px;
     height: 70px;
+}
+
+.dbl {
+    width: 145px;
 }
