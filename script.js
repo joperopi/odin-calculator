@@ -69,7 +69,11 @@ operations.addEventListener("click", function(e) {
         } else {
             let firstHalf = values.reduce((a, b) => a.toString() + b.toString());
             values.splice(0);
-            values.push(firstHalf,operationChoice)
+            if (operationChoice === "="){
+                values.push(firstHalf);
+            }else {
+                values.push(firstHalf,operationChoice);
+            }
         }
         displayMain.innerText = values.join("");
         console.log(values);
