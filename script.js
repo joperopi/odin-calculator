@@ -35,7 +35,7 @@ operations.addEventListener("click", function(e) {
         firstHalf = values.reduce((a, b) => a.toString() + b.toString());
         let operationChoice = e.target.innerText;
         values.splice(0);
-        values.push(firstHalf, ` ${operationChoice} `)
+        values.push(firstHalf,operationChoice)
         displayMain.innerText = values.join("");
         console.log(values);
     }
