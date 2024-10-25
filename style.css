@@ -60,6 +60,7 @@ body {
 
 .left {
     padding: 5px;
+    padding-right: 0px;
     align-items: end;
     
 }
@@ -68,6 +69,7 @@ body {
     justify-content: end;
     flex-direction: column;
     padding: 5px;
+    padding-left: 0px;
 }
 
 .buttons {
