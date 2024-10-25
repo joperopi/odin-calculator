@@ -26,7 +26,6 @@ function divide(a, b) {
 
 numpad.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
-        console.log(e.target.innerText);
         values.push(e.target.innerText);
         displayMain.innerText = values.join("");
         console.log(values);
@@ -35,16 +34,38 @@ numpad.addEventListener("click", function(e) {
 
 operations.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
-        let operationChoice = e.target.innerText;
-        if (values.length === 0) {
-            values.push(0, operationChoice);
+        let operationChoice = e.target.innerText; //operationChoice is latest operation to be pressed
+        if (values.length === 0 && !operationChoice === "=") {
+            values.push(0, operationChoice); // if theres nothing at the time of pressing
         } else if (
             values[1] === "+" ||
             values[1] === "-" ||
             values[1] === "×" ||
-            values[1] === "÷" ||
-            values[1] === "=") {
-                
+            values[1] === "÷" ) {
+                let secondHalf = values.splice(2);
+                console.log("second half ",secondHalf)
+                if (secondHalf.length === 0) {
+                    values[1] = operationChoice;
+                } else {
+                    let first = Number(values[0]);
+                    let second = Number(secondHalf);
+                    if (values[1] === "+") {
+                        values.splice(0);
+                        values.push(add(first, second), operationChoice);
+                    } else if (values[1] === "-") {
+                        values.splice(0);
+                        values.push(subtract(first, second), operationChoice);
+                    } else if (values[1] === "×") {
+                        values.splice(0);
+                        values.push(multiply(first, second), operationChoice);
+                    } else if (values[1] === "÷") {
+                        values.splice(0);
+                        values.push(divide(first, second), operationChoice);
+                        if (values[0] === "ERROR") {
+                            values.pop();
+                        }
+                    }
+                }
         } else {
             let firstHalf = values.reduce((a, b) => a.toString() + b.toString());
             values.splice(0);
