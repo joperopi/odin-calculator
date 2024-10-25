@@ -1,6 +1,7 @@
 let displayMain = document.getElementById("displayMain");
 let displayLast = document.getElementById("displayLast");
 let numpad = document.getElementById("numpad");
+let operations = document.getElementById("operations")
 
 let values = [];
 
