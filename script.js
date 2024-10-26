@@ -43,6 +43,7 @@ operations.addEventListener("click", function(e) {
             values[1] === "-" ||
             values[1] === "×" ||
             values[1] === "÷" ) {
+                console.log("test")
                 let secondHalf = values.splice(2).join("");
                 if (secondHalf.length === 0) {
                     values[1] = operationChoice;
