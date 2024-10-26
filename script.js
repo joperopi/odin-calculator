@@ -46,6 +46,11 @@ function undoDisplay() {
     displayMain.innerText = values.join("");
 }
 
+function clearDisplay() {
+    values.splice(0);
+    displayMain.innerText = values;
+}
+
 topRow.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
         if (e.target.innerText === "UNDO") {
