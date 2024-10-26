@@ -37,6 +37,15 @@ function operate(a, b, c) {
     }
 }
 
+function undoDisplay() {
+    if (values[values.length-1].length > 1) {
+        values = values[values.length-1].split("");
+    }
+    values.pop();
+    console.log(values);
+    displayMain.innerText = values.join("");
+}
+
 topRow.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
         if (e.target.innerText === "UNDO") {
