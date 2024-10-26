@@ -1,4 +1,5 @@
 let displayMain = document.getElementById("displayMain");
+let topRow = document.getElementById("toprow");
 let numpad = document.getElementById("numpad");
 let operations = document.getElementById("operations")
 
@@ -35,6 +36,18 @@ function operate(a, b, c) {
         return divide(a,b);
     }
 }
+
+topRow.addEventListener("click", function(e) {
+    if (e.target.className.includes("btn")) {
+        if (e.target.innerText === "UNDO") {
+            undoDisplay();
+        } else if (e.target.innerText === "CLEAR") {
+            clearDisplay();
+        } else if (e.target.innerText === "%") {
+            percentage();
+        }
+    }
+})
 
 numpad.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
