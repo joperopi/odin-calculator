@@ -61,7 +61,7 @@ operations.addEventListener("click", function(e) {
             values[1] === "÷") {
                 console.log("test")
                 let secondHalf = values.splice(2).join("");
-                if (secondHalf.length === 0) {
+                if (secondHalf.length === 0/* && (values[0] === "ERROR") == false*/) {
                     values[1] = operationChoice;
                     console.log("here");
                 } else {
@@ -75,12 +75,19 @@ operations.addEventListener("click", function(e) {
                         operationChoice === "-" ||
                         operationChoice === "×" ||
                         operationChoice === "÷") {
-                        values.push(operationChoice);
+                        if (values[0] === "ERROR") {
+                            values = ["ERROR"];
+                        } else {
+                            values.push(operationChoice);
+                        }
                     }
                     
                 }  
         } else {
             let firstHalf = values.reduce((a, b) => a.toString() + b.toString());
+            if (firstHalf === "ERROR") {
+                firstHalf = 0;
+            }
             values.splice(0);
             if (operationChoice === "="){
                 values.push(firstHalf);
