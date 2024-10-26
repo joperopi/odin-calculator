@@ -4,6 +4,7 @@ let numpad = document.getElementById("numpad");
 let operations = document.getElementById("operations")
 
 let values = [];
+let operationChoice = "";
 
 function add(a, b) {
     return a + b;
@@ -38,19 +39,19 @@ function operate(a, b, c) {
 
 numpad.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
-
-        if (values[0] === "ERROR") {
+        if (values[0] === "ERROR" || operationChoice === "=") {
             values.pop();
         }
         values.push(e.target.innerText);
         displayMain.innerText = values.join("");
+        operationChoice = "";
         console.log(values);
     }
 })
 
 operations.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
-        let operationChoice = e.target.innerText; //operationChoice is latest operation to be pressed
+        operationChoice = e.target.innerText; //operationChoice is latest operation to be pressed
         if (values.length === 0 && !operationChoice === "=") {
             values.push(0, operationChoice); // if theres nothing at the time of pressing
             console.log("here");
