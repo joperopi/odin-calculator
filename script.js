@@ -60,8 +60,10 @@ operations.addEventListener("click", function(e) {
             values[1] === "×" ||
             values[1] === "÷") {
                 let secondHalf = values.splice(2).join("");
-                if (secondHalf.length === 0/* && (values[0] === "ERROR") == false*/) {
-                    values[1] = operationChoice;
+                if (secondHalf.length === 0) {
+                    if (!operationChoice === "=") {
+                        values[1] = operationChoice;
+                    }
                 } else {
                     let first = Number(values[0]);
                     let second = Number(secondHalf);
