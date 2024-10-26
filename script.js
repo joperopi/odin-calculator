@@ -24,6 +24,18 @@ function divide(a, b) {
     return a / b;
 }
 
+function operate(a, b, c) {
+    if (c === "+") {
+        return add(a,b);
+    }else if (c === "-") {
+        return subtract(a,b);
+    }else if (c === "×") {
+        return multiply(a,b);        
+    }else if (c === "÷") {
+        return divide(a,b);
+    }
+}
+
 numpad.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
         values.push(e.target.innerText);
@@ -42,7 +54,8 @@ operations.addEventListener("click", function(e) {
             values[1] === "+" ||
             values[1] === "-" ||
             values[1] === "×" ||
-            values[1] === "÷" ) {
+            values[1] === "÷" ||
+            values[1] === "=") {
                 console.log("test")
                 let secondHalf = values.splice(2).join("");
                 if (secondHalf.length === 0) {
@@ -51,26 +64,17 @@ operations.addEventListener("click", function(e) {
                 } else {
                     let first = Number(values[0]);
                     let second = Number(secondHalf);
-                    if (values[1] === "+") {
-                        values.splice(0);
-                        values.push(add(first, second), operationChoice);
-                        console.log("here");
-                    } else if (values[1] === "-") {
-                        values.splice(0);
-                        values.push(subtract(first, second), operationChoice);
-                        console.log("here");
-                    } else if (values[1] === "×") {
-                        values.splice(0);
-                        values.push(multiply(first, second), operationChoice);
-                        console.log("here");
-                    } else if (values[1] === "÷") {
-                        values.splice(0);
-                        values.push(divide(first, second), operationChoice);
-                        console.log("here");
-                        if (values[0] === "ERROR") {
-                            values.pop();
-                        }
+                    let returnValue = operate(first, second, values[1]);
+                    values.splice(0);
+                    values.push(returnValue);
+                    console.log("operation choice: ",operationChoice)
+                    if (operationChoice === "+" ||
+                        operationChoice === "-" ||
+                        operationChoice === "×" ||
+                        operationChoice === "÷") {
+                        values.push(operationChoice);
                     }
+                    
                 }  
         } else {
             let firstHalf = values.reduce((a, b) => a.toString() + b.toString());
