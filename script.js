@@ -55,10 +55,8 @@ topRow.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
         if (e.target.innerText === "UNDO") {
             undoDisplay();
-        } else if (e.target.innerText === "CLEAR") {
+        } else {
             clearDisplay();
-        } else if (e.target.innerText === "%") {
-            percentage();
         }
     }
 })
