@@ -38,6 +38,10 @@ function operate(a, b, c) {
 
 numpad.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
+
+        if (values[0] === "ERROR") {
+            values.pop();
+        }
         values.push(e.target.innerText);
         displayMain.innerText = values.join("");
         console.log(values);
@@ -54,8 +58,7 @@ operations.addEventListener("click", function(e) {
             values[1] === "+" ||
             values[1] === "-" ||
             values[1] === "×" ||
-            values[1] === "÷" ||
-            values[1] === "=") {
+            values[1] === "÷") {
                 console.log("test")
                 let secondHalf = values.splice(2).join("");
                 if (secondHalf.length === 0) {
