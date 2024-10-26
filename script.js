@@ -45,7 +45,6 @@ numpad.addEventListener("click", function(e) {
         values.push(e.target.innerText);
         displayMain.innerText = values.join("");
         operationChoice = "";
-        console.log("numpad triggered ",values);
     }
 })
 
@@ -95,6 +94,5 @@ operations.addEventListener("click", function(e) {
             }
         }
         displayMain.innerText = values.join("");
-        console.log("numpad triggered ",values);
     }
 })
