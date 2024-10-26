@@ -45,7 +45,7 @@ numpad.addEventListener("click", function(e) {
         values.push(e.target.innerText);
         displayMain.innerText = values.join("");
         operationChoice = "";
-        console.log(values);
+        console.log("numpad triggered ",values);
     }
 })
 
@@ -54,24 +54,20 @@ operations.addEventListener("click", function(e) {
         operationChoice = e.target.innerText; //operationChoice is latest operation to be pressed
         if (values.length === 0 && !operationChoice === "=") {
             values.push(0, operationChoice); // if theres nothing at the time of pressing
-            console.log("here");
         } else if (
             values[1] === "+" ||
             values[1] === "-" ||
             values[1] === "×" ||
             values[1] === "÷") {
-                console.log("test")
                 let secondHalf = values.splice(2).join("");
                 if (secondHalf.length === 0/* && (values[0] === "ERROR") == false*/) {
                     values[1] = operationChoice;
-                    console.log("here");
                 } else {
                     let first = Number(values[0]);
                     let second = Number(secondHalf);
                     let returnValue = operate(first, second, values[1]);
                     values.splice(0);
                     values.push(returnValue);
-                    console.log("operation choice: ",operationChoice)
                     if (operationChoice === "+" ||
                         operationChoice === "-" ||
                         operationChoice === "×" ||
@@ -92,13 +88,11 @@ operations.addEventListener("click", function(e) {
             values.splice(0);
             if (operationChoice === "="){
                 values.push(firstHalf);
-                console.log("here");
             }else {
                 values.push(firstHalf,operationChoice);
-                console.log("here");
             }
         }
         displayMain.innerText = values.join("");
-        console.log(values);
+        console.log("numpad triggered ",values);
     }
 })
