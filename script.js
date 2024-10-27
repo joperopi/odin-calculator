@@ -93,10 +93,7 @@ operations.addEventListener("click", function(e) {
                     let returnValue = operate(first, second, values[1]);
                     values.splice(0);
                     values.push(returnValue);
-                    if (operationChoice === "+" ||
-                        operationChoice === "-" ||
-                        operationChoice === "×" ||
-                        operationChoice === "÷") {
+                    if (operationChoice !== "=") {
                         if (values[0] === "ERROR") {
                             values = ["ERROR"];
                         } else {
