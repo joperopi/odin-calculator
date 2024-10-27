@@ -84,7 +84,7 @@ operations.addEventListener("click", function(e) {
             values[1] === "÷") {
                 let secondHalf = values.splice(2).join("");
                 if (secondHalf.length === 0) {
-                    if (!operationChoice === "=") {
+                    if (operationChoice !== "=") { 
                         values[1] = operationChoice;
                     }
                 } else {
