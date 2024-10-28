@@ -25,21 +25,18 @@ body {
 
 .display {
     background-color: black;
-    width: 350px;
+    width: 310px;
     height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: end;
     padding: 10px;
+    font-size: 60px;
 }
 
 .display p {
     color: white;
-}
-
-#displayMain {
-    font-size: 60px;
 }
 
 #numpad,
