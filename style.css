@@ -46,7 +46,6 @@ body {
     font-size: 60px;
 }
 
-#toprow,
 #numpad,
 #operations,
 .right,
@@ -86,4 +85,14 @@ body {
 
 .dbl {
     width: 145px;
+}
+
+#toprow {
+    display: flex;
+    gap: 5px;
+    width: 221px;
+}
+
+.top {
+    flex-grow: 1;
 }
