@@ -123,6 +123,11 @@ operations.addEventListener("click", function(e) {
                 values.push(firstHalf,operationChoice);
             }
         }
+
+        if (Number.isInteger(Number(values[0])) !== true) {
+            values[0] = Number(values[0]).toFixed(2).toString();
+        }
+        
         displayMain.innerText = values.join("");
     }
 })
