@@ -66,7 +66,16 @@ numpad.addEventListener("click", function(e) {
         if (values[0] === "ERROR" || operationChoice === "=") {
             values.pop();
         }
-        values.push(e.target.innerText);
+
+        if (values[0] == "0" && values[1] !== ".") {
+            values.splice(0, 1);
+        }
+
+        if (values.includes(".") && e.target.innerText === ".") {
+        } else {
+            values.push(e.target.innerText);
+        }
+
         displayMain.innerText = values.join("");
         operationChoice = "";
     }
