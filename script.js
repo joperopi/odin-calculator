@@ -69,10 +69,10 @@ topRow.addEventListener("click", function(e) {
         }
     }
 })
-//numpad input not replacing result OR numpad input replacing operator after = is pressed
+
 numpad.addEventListener("click", function(e) { 
     if (e.target.className.includes("btn")) {
-        if (values[0] === "ERROR" && operationChoice === "=") { // if its ||, pops the operator and puts the number
+        if (values[0] === "ERROR" && operationChoice === "=") { 
             values.pop();
         }
 
@@ -98,9 +98,9 @@ numpad.addEventListener("click", function(e) {
 
 operations.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
-        operationChoice = e.target.innerText; //operationChoice is latest operation to be pressed
+        operationChoice = e.target.innerText; 
         if (values.length === 0 && operationChoice !== "=") {
-            values.push(0, operationChoice); // if theres nothing at the time of pressing
+            values.push(0, operationChoice); 
         } else if (
             values[1] === "+" ||
             values[1] === "-" ||
