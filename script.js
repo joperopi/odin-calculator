@@ -129,7 +129,7 @@ operations.addEventListener("click", function(e) {
             }
         }
 
-        if (Number.isInteger(Number(values[0])) !== true) {
+        if (Number.isInteger(Number(values[0])) !== true && isNaN(values[0]) !== true) {
             values[0] = Number(values[0]).toFixed(2).toString();
         }
         
