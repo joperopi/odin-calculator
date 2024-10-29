@@ -51,6 +51,15 @@ function clearDisplay() {
     displayMain.innerText = values;
 }
 
+function checkOperator() {
+    if (values[1] !== "-" &&
+        values[1] !== "+" &&
+        values[1] !== "×" &&
+        values[1] !== "÷") {
+            return true;
+    }
+}
+
 topRow.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
         if (e.target.innerText === "UNDO") {
@@ -60,19 +69,20 @@ topRow.addEventListener("click", function(e) {
         }
     }
 })
-
-numpad.addEventListener("click", function(e) {
+//numpad input not replacing result OR numpad input replacing operator after = is pressed
+numpad.addEventListener("click", function(e) { 
     if (e.target.className.includes("btn")) {
-        if (values[0] === "ERROR" && operationChoice === "=") {
+        if (values[0] === "ERROR" && operationChoice === "=") { // if its ||, pops the operator and puts the number
             values.pop();
+        }
+
+        if (operationChoice === "=" && checkOperator() === true) {
+            values.pop()
         }
 
         if (values[0] == "0" &&
             values[1] !== "." &&
-            values[1] !== "-" &&
-            values[1] !== "+" &&
-            values[1] !== "×" &&
-            values[1] !== "÷") {
+            checkOperator() === true) {
             values.splice(0, 1);
         }
 
