@@ -32,6 +32,7 @@ body {
     font-size: 50px;
     overflow-x: auto;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #numpad,
