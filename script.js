@@ -118,7 +118,7 @@ operations.addEventListener("click", function(e) {
                 }  
         } else {
             let firstHalf = values.reduce((a, b) => a.toString() + b.toString());
-            if (firstHalf === "ERROR") {
+            if (firstHalf === "ERROR" || firstHalf == ".") {
                 firstHalf = 0;
             }
             values.splice(0);
