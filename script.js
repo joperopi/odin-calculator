@@ -89,7 +89,7 @@ numpad.addEventListener("click", function(e) {
 operations.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
         operationChoice = e.target.innerText; //operationChoice is latest operation to be pressed
-        if (values.length === 0 && !operationChoice === "=") {
+        if (values.length === 0 && operationChoice !== "=") {
             values.push(0, operationChoice); // if theres nothing at the time of pressing
         } else if (
             values[1] === "+" ||
