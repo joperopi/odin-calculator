@@ -63,7 +63,7 @@ topRow.addEventListener("click", function(e) {
 
 numpad.addEventListener("click", function(e) {
     if (e.target.className.includes("btn")) {
-        if (values[0] === "ERROR" || operationChoice === "=") {
+        if (values[0] === "ERROR" && operationChoice === "=") {
             values.pop();
         }
 
