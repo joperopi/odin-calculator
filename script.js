@@ -67,7 +67,12 @@ numpad.addEventListener("click", function(e) {
             values.pop();
         }
 
-        if (values[0] == "0" && values[1] !== ".") {
+        if (values[0] == "0" &&
+            values[1] !== "." &&
+            values[1] !== "-" &&
+            values[1] !== "+" &&
+            values[1] !== "×" &&
+            values[1] !== "÷") {
             values.splice(0, 1);
         }
 
